@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "book-next",
+  "alias": "book-next",
+  "builds": [
+	{
+	  "src": "package.json",
+	  "use": "@vercel/next"
+	}
+  ],
+  "routes": [
+	{
+	  "src": "/product/(?<slug>[^/]+)$",
+	  "dest": "/product?slug=$slug"
+	},
+	{
+	  "src": "/category/(?<slug>[^/]+)$",
+	  "dest": "/category?slug=$slug"
+	}
+  ]
+}
